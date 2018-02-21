@@ -1,0 +1,62 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-signup-form></app-signup-form>
+<br>
+<br>
+<div style="text-align:center">
+  <h1 blueColored>
+    Welcome to {{ title }}!
+    <br>
+    <input type="text" #myInputText nam='myText' id="myText">
+  </h1>
+  <div *ngIf='blnValue;then addOdd else addEven'>Working With *ngIf</div>
+  <button (click)='toogleClick()'>Click</button>
+  <!-- using ng template -->
+  <ng-template #addOdd>Odd</ng-template>
+  <ng-template #addEven>Even</ng-template>
+  <!-- local variable -->
+  <div *ngIf='2==1;let result'>Result:= {{result}}</div>
+  Result:= {{result}}
+</div>
+<ul *ngFor='let item of languages;let i=index;'>
+  <li>
+    {{i}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+<br>
+<ul *ngFor='let item of languages;let even=even;'>
+  <li *ngIf='even'>
+    {{i}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+<br>
+<ul *ngFor='let item of languages;let odd=odd;'>
+  <li *ngIf='odd'>
+    {{odd}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor='let item of languages;let f=first;'>
+    {{f}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor='let item of languages;let l=last;'>
+    {{l}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+
+<ul *ngFor='let item of languages;let f=first;'>
+  <li *ngIf='f'>
+    {{f}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+
+<ul *ngFor='let item of languages;let l=last;'>
+  <li *ngIf='l'>
+    {{l}} {{item.name}}-{{item.age}}
+  </li>
+</ul>
+<!-- <router-outlet></router-outlet> -->
+<app-child [myValue]='+2+3' (myOutPut)='getValue($event)'></app-child>

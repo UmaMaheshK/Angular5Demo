@@ -1,0 +1,50 @@
+<div class="row custom-row">
+  <div class="col-sm-5 custom-container jumbotron">
+
+    <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onFormSubmit(signupForm)" novalidate>
+      <fieldset>
+        <legend>SignUp</legend>
+
+        <!-- Email Block -->
+        <div class="form-group">
+          <label for="inputEmail">Email</label>
+          <input type="text" id="inputEmail" [(ngModel)]="user.email" formControlName="email" placeholder="Email">
+        </div>
+        <!-- Password Block -->
+        <div formGroupName="password">
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" id="inputPassword" [(ngModel)]="user.password.pwd" formControlName="pwd" placeholder="Password">
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" [(ngModel)]="user.password.confirm" formControlName="confirm" placeholder="Password">
+          </div>
+        </div>
+        <!-- Select gender Block -->
+        <div class="form-group">
+          <label for="select">Gender</label>
+          <select id="select" [(ngModel)]="user.gender" formControlName="gender">
+            <option *ngFor='let g of gender' [value]="g">{{g}}</option>
+          </select>
+        </div>
+
+        <!-- Terms and conditions Block -->
+        <div class="form-group checkbox">
+          <label>
+            <input type="checkbox" [(ngModel)]="user.terms" formControlName="terms"> Confirm that you've read the Terms and Conditions
+          </label>
+        </div>
+
+        <!-- Buttons Block -->
+        <div class="form-group">
+          <button type="reset" class="btn btn-default">Cancel</button>
+          <button type="submit" class="btn btn-success" >Submit</button>
+        </div>
+      </fieldset>
+    </form>
+    {{user | json}}
+    <!-- <br> {{signupForm.value | json }} -->
+  </div>
+</div>
