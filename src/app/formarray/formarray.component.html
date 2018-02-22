@@ -1,3 +1,12 @@
-<p>
-  formarray works!
-</p>
+<form class="form-horizontal" [formGroup]="orderForm" (ngSubmit)="onFormSubmit(orderForm)" novalidate>
+  <div formArrayName="items" *ngFor="let item of orderForm.get('items').controls; let i = index;">
+    <div [formGroupName]="i">
+      <input formControlName="name" placeholder="Item name">
+      <input formControlName="description" placeholder="Item description">
+      <input formControlName="price" placeholder="Item price">
+      <button type="button" class="btn btn-success" (click)="addItem()">Add</button>
+    </div>
+    Chosen name: {{ orderForm.controls.items.controls[i].controls.name.value }}
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
