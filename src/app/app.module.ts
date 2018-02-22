@@ -9,13 +9,15 @@ import { ChildComponent } from './child/child.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 // import { FormsModule } from '@angular/forms';
 import { FormsModule, FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormarrayComponent } from './formarray/formarray.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlueColorDirective,
     ChildComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    FormarrayComponent
   ],
   imports: [
     BrowserModule,
