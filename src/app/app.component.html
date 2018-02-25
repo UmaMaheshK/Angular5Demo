@@ -2,6 +2,14 @@
 <app-formarray></app-formarray>
 <app-signup-form></app-signup-form>
 <br>
+<!-- datepicker -->
+<div class="form-group">
+  <label for="dateOfBirth">Date of Birth</label>
+  <input type="text" bsDatepicker [bsConfig]='datepickerConfig'>
+  <input type="text" bsDaterangepicker [bsConfig]='datepickerConfig' id="daterangePK">
+</div>
+<br>
+
 <br>
 <div style="text-align:center">
   <h1 blueColored>
@@ -60,4 +68,4 @@
   </li>
 </ul>
 <!-- <router-outlet></router-outlet> -->
-<app-child [myValue]='+2+3' (myOutPut)='getValue($event)'></app-child>
+<app-child [myValue]='1+2+3' (myOutPut)='getValue($event)'></app-child>

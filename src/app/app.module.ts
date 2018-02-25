@@ -10,6 +10,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 // import { FormsModule } from '@angular/forms';
 import { FormsModule, FormGroup, FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FormarrayComponent } from './formarray/formarray.component';
+import { BsDatepickerModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormarrayComponent } from './formarray/formarray.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BsDatepickerModule.forRoot(),
     FormsModule, ReactiveFormsModule
   ],
   providers: [],

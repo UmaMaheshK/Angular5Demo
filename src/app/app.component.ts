@@ -1,11 +1,13 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //npm install ngx-bootstrap --save
+  datepickerConfig: Partial<BsDatepickerConfig>;
   @ViewChild('myInputText') inputText: ElementRef;
   title = 'Uma Mahesh';
   private blnValue: boolean = false;
@@ -19,6 +21,14 @@ export class AppComponent {
     { 'name': 'Python', 'age': '10' },
   ];
   constructor() {
+    this.datepickerConfig = Object.assign({}, {
+      minDate: new Date(2000, 0, 1),
+      // maxDate: new Date(),
+      showWeekNumbers: false,
+      containerClass: 'theme-dark-blue',
+      dateInputFormat: 'DD-MMMM-YYYY',
+      rangeInputFormat:'DD-MMMM-YYYY'
+    });
     console.clear();
     // setInterval(() => this.send2Server(), 2000);
   }
