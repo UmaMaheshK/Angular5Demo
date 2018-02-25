@@ -12,6 +12,8 @@ export class AppComponent {
   title = 'Uma Mahesh';
   private blnValue: boolean = false;
   //private testname:string=`${blnValue} testing`;
+  sendDataToChild = 'I am from Parent component';
+  receivedDataFromChild: string;
   private b: number;
   languages: any[] = [
 
@@ -27,7 +29,7 @@ export class AppComponent {
       showWeekNumbers: false,
       containerClass: 'theme-dark-blue',
       dateInputFormat: 'DD-MMMM-YYYY',
-      rangeInputFormat:'DD-MMMM-YYYY'
+      rangeInputFormat: 'DD-MMMM-YYYY'
     });
     console.clear();
     // setInterval(() => this.send2Server(), 2000);
